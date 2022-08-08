@@ -1,0 +1,20 @@
+<ion-app  style="padding-top: 0px;margin: 0px;">
+  <ion-split-pane  style="padding-top: 0px;margin: 0px;" contentId="main-content">
+    <ion-menu style="padding-top: 0px; margin: 0px;" contentId="main-content" type="overlay">
+      <ion-content  style="padding-top: 0px;">
+        <ion-list style="padding-top:0px ;" id="inbox-list">
+          <img  style="padding-top: 0px; padding-left: 2px;"src="../../../assets/icon/taxi.png" width="120" height="60"/>
+          <ion-list-header  style="padding-top: 0px;" style="padding-left: 5px;">Menú</ion-list-header>
+          <ion-menu-toggle  style="padding-top: 2px; margin: 0px;" auto-hide="false" *ngFor="let p of appUser; let i = index">
+            <ion-item  style="padding-top: 0px; " routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-label  style="padding-top: 0px;">{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet  id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+
+
